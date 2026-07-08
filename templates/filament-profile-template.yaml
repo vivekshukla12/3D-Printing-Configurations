@@ -1,0 +1,119 @@
+profile:
+  name: "<Vendor> <Filament Type> - <Printer Model>"
+  status: "baseline-starting-point | tuned | experimental"
+  slicer: "Bambu Studio"
+  created_from: "<Base slicer profile>"
+
+printer:
+  manufacturer: "<Printer manufacturer>"
+  model: "<Printer model>"
+  nozzle_context:
+    recommended_first_test_nozzle: "main | aux"
+    aux_nozzle_supported: false
+    notes: []
+
+filament:
+  vendor: "<Vendor>"
+  type: "<Material type>"
+  material_family: "<PLA | PETG | ABS | ASA | TPU | etc.>"
+  density_g_cm3: null
+  softening_temperature_c: null
+  notes: []
+
+hardware:
+  nozzle:
+    baseline_diameter_mm: null
+    recommended_material: "brass | hardened steel | stainless steel"
+    preferred_diameter_mm_for_reliability: null
+    notes: []
+  plate:
+    type: "<Plate type>"
+
+filament_settings:
+  recommended_nozzle_temperature_range_c:
+    min: null
+    max: null
+  nozzle_temperature_c:
+    first_layer: null
+    other_layers: null
+    tuning_notes: []
+  bed_temperature_c:
+    textured_pei:
+      first_layer: null
+      other_layers: null
+      tuning_notes: []
+  flow:
+    flow_ratio_start: null
+    adjustment_sequence: []
+    notes: []
+  max_volumetric_speed_mm3_s:
+    baseline: null
+    conservative_range:
+      min: null
+      max: null
+    notes: []
+
+cooling:
+  part_cooling_fan:
+    initial_layers_without_cooling: null
+    initial_layer_fan_speed_percent: null
+    min_fan_speed_percent: null
+    max_fan_speed_percent: null
+    keep_fan_always_on: null
+    slow_printing_down_for_better_layer_cooling: null
+    min_print_speed_mm_s: null
+  overhangs_and_bridges:
+    force_cooling_for_overhangs_and_bridges: null
+    fan_speed_for_overhangs_percent: null
+  auxiliary_part_cooling_fan:
+    initial_layer_fan_speed_percent: null
+    ramp_up_to_percent: null
+    notes: []
+
+process_speed:
+  layer_height_mm:
+    recommended_start: null
+    acceptable_for_nozzle: []
+    avoid: []
+  speeds_mm_s:
+    first_layer: null
+    first_layer_infill: null
+    outer_wall: null
+    inner_wall: null
+    sparse_infill: null
+    internal_solid_infill: null
+    top_surface: null
+    gap_infill: null
+    support: null
+    support_interface: null
+    bridge: null
+    travel_speed_range:
+      min: null
+      max: null
+  notes: []
+
+acceleration:
+  acceleration_mm_s2:
+    normal_printing: null
+    travel: null
+    initial_layer_travel: null
+    initial_layer: null
+    outer_wall: null
+    inner_wall: null
+    top_surface: null
+  sparse_infill_acceleration_percent: null
+  notes: []
+
+calibration_strategy:
+  flow_dynamics:
+    description: "K-factor / pressure advance calibration."
+    main_nozzle: null
+    aux_nozzle: null
+  flow_rate:
+    description: "Flow ratio / extrusion amount calibration."
+    main_nozzle: null
+    aux_nozzle: null
+
+first_test_print:
+  recommended_duration_minutes: null
+  check_for: []
