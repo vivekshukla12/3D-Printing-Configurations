@@ -1,0 +1,46 @@
+calibration_values:
+  profile: "Creality PLA Wood - Bambu Lab X2D"
+  status: "pending-user-calibration"
+
+  main_nozzle:
+    flow_dynamics:
+      calibrated: false
+      k_factor: null
+      calibration_date: null
+      nozzle_diameter_mm: 0.4
+      nozzle_material: "hardened steel"
+      nozzle_temperature_c: 210
+      notes:
+        - "Add manual Flow Dynamics K-factor after calibration."
+    flow_rate:
+      calibrated: false
+      flow_ratio: 0.98
+      calibration_date: null
+      notes:
+        - "Baseline flow ratio is 0.98. Update after Flow Rate calibration."
+
+  aux_nozzle:
+    flow_dynamics:
+      calibrated: false
+      k_factor: null
+      calibration_date: null
+      nozzle_diameter_mm: 0.4
+      nozzle_material: "hardened steel"
+      nozzle_temperature_c: 210
+      notes:
+        - "Add AUX-specific K-factor if Bambu Studio calibration is run for AUX nozzle."
+        - "AUX nozzle may require different K-factor values than the main nozzle due to the longer filament path."
+    flow_rate:
+      calibrated: false
+      flow_ratio: 0.98
+      calibration_date: null
+      notes:
+        - "Update after AUX Flow Rate calibration or AUX-specific test prints."
+
+  test_print_log:
+    - date: null
+      nozzle: null
+      model: null
+      result: null
+      observations: []
+      changes_made: []
