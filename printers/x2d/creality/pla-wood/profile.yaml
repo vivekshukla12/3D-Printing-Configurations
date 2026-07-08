@@ -1,0 +1,153 @@
+profile:
+  name: "Creality PLA Wood - Bambu Lab X2D baseline"
+  status: "baseline-starting-point"
+  slicer: "Bambu Studio"
+  created_from: "Generic PLA custom profile"
+
+printer:
+  manufacturer: "Bambu Lab"
+  model: "X2D"
+  nozzle_context:
+    recommended_first_test_nozzle: "main"
+    aux_nozzle_supported: true
+    notes:
+      - "Use main nozzle for first validation print if the filament is not yet proven stable."
+      - "AUX nozzle should be calibrated separately where Bambu Studio exposes nozzle-specific calibration."
+
+filament:
+  vendor: "Creality"
+  type: "PLA Wood"
+  material_family: "wood-filled PLA"
+  density_g_cm3: 1.21
+  softening_temperature_c: 45
+  notes:
+    - "Wood-filled PLA is more clog-prone than normal PLA."
+    - "Avoid high-speed PLA profiles for this material."
+    - "Dry filament if stringing, popping, rough extrusion, or inconsistent flow is observed."
+
+hardware:
+  nozzle:
+    baseline_diameter_mm: 0.4
+    recommended_material: "hardened steel"
+    preferred_diameter_mm_for_reliability: 0.6
+    notes:
+      - "0.4 mm can work, but 0.6 mm is safer for wood-filled PLA."
+      - "Avoid very low layer heights with 0.4 mm nozzle."
+  plate:
+    type: "Textured PEI"
+
+filament_settings:
+  recommended_nozzle_temperature_range_c:
+    min: 190
+    max: 220
+  nozzle_temperature_c:
+    first_layer: 215
+    other_layers: 210
+    tuning_notes:
+      - "If stringing or blobs are visible, try 200–205°C."
+      - "If clicking, under-extrusion, gaps, or rough layers are visible, try 215–220°C."
+  bed_temperature_c:
+    textured_pei:
+      first_layer: 60
+      other_layers: 55
+      tuning_notes:
+        - "Use 60°C other layers if adhesion is weak."
+        - "Avoid excessive chamber heat for PLA."
+  flow:
+    flow_ratio_start: 0.98
+    adjustment_sequence:
+      - 0.98
+      - 1.00
+      - 1.02
+    notes:
+      - "Increase gradually only if under-extrusion is confirmed."
+      - "Do not change flow ratio and temperature at the same time during tuning."
+  max_volumetric_speed_mm3_s:
+    baseline: 8
+    conservative_range:
+      min: 6
+      max: 8
+    notes:
+      - "18 mm³/s is too aggressive for this filled PLA baseline."
+      - "Reduce to 6 mm³/s if under-extrusion or clogging signs appear."
+
+cooling:
+  part_cooling_fan:
+    initial_layers_without_cooling: 3
+    initial_layer_fan_speed_percent: 0
+    min_fan_speed_percent: 80
+    max_fan_speed_percent: 100
+    keep_fan_always_on: true
+    slow_printing_down_for_better_layer_cooling: true
+    min_print_speed_mm_s: 20
+  overhangs_and_bridges:
+    force_cooling_for_overhangs_and_bridges: true
+    fan_speed_for_overhangs_percent: 100
+  auxiliary_part_cooling_fan:
+    initial_layer_fan_speed_percent: 0
+    ramp_up_to_percent: 0
+    notes:
+      - "Keep auxiliary part cooling fan off for wood PLA to avoid uneven cooling and surface defects."
+
+process_speed:
+  layer_height_mm:
+    recommended_start: 0.20
+    acceptable_for_0_4_nozzle:
+      - 0.20
+      - 0.24
+    avoid_for_wood_pla_with_0_4_nozzle:
+      - 0.08
+      - 0.12
+  speeds_mm_s:
+    first_layer: 30
+    first_layer_infill: 40
+    outer_wall: 50
+    inner_wall: 70
+    sparse_infill: 100
+    internal_solid_infill: 80
+    top_surface: 45
+    gap_infill: 50
+    support: 80
+    support_interface: 50
+    bridge: 30
+    travel_speed_range:
+      min: 200
+      max: 300
+  notes:
+    - "For decorative wood PLA, surface quality is more important than raw speed."
+    - "Keep outer wall and top surface slow for better visual quality."
+
+acceleration:
+  acceleration_mm_s2:
+    normal_printing: 1000
+    travel: 10000
+    initial_layer_travel: 6000
+    initial_layer: 500
+    outer_wall: 1000
+    inner_wall: 1000
+    top_surface: 1000
+  sparse_infill_acceleration_percent: 100
+  notes:
+    - "These are conservative values suitable for the first test print."
+    - "Do not increase acceleration until the first print finishes cleanly."
+
+calibration_strategy:
+  flow_dynamics:
+    description: "K-factor / pressure advance calibration. Helps corners, seams, blobs, and start-stop consistency."
+    main_nozzle: "Run manual calibration and save the result."
+    aux_nozzle: "Run manual calibration if Bambu Studio allows AUX nozzle selection."
+  flow_rate:
+    description: "Flow ratio / extrusion amount calibration. Helps top surface, wall consistency, gaps, under-extrusion, and over-extrusion."
+    main_nozzle: "Run after Flow Dynamics or after basic settings are stable."
+    aux_nozzle: "Run separately for AUX if Bambu Studio supports nozzle-specific selection. Otherwise tune filament flow ratio using AUX test prints."
+
+first_test_print:
+  recommended_duration_minutes: "20-30"
+  check_for:
+    - "clicking from extruder"
+    - "under-extrusion"
+    - "stringing"
+    - "corner blobs"
+    - "rough top surface"
+    - "gaps between lines"
+    - "poor bed adhesion"
