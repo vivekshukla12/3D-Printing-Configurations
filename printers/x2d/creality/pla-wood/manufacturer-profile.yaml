@@ -1,0 +1,23 @@
+profile:
+  kind: manufacturer-or-base
+  status: partial
+  source: "Creality PLA Wood values captured from the user's spool/profile context"
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: Creality
+  product: PLA Wood
+  material: wood-filled PLA
+
+known_source_values:
+  density_g_cm3: 1.21
+  recommended_nozzle_temperature_c:
+    min: 190
+    max: 220
+
+notes:
+  - "Exact untouched manufacturer profile was not captured."
+  - "Calibrated and recommended values are stored separately in calibrated-profile.yaml."
