@@ -1,0 +1,20 @@
+profile:
+  kind: manufacturer
+  status: partial
+  source: "Bambu Studio system profile"
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: Bambu Lab
+  product: PLA Matte
+  material: PLA
+
+hardware:
+  nozzle_diameter_mm: 0.4
+  nozzle_flow: standard
+
+notes:
+  - "Exact system-profile values have not yet been exported into this repository."
