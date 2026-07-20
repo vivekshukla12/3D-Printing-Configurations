@@ -1,0 +1,36 @@
+calibration_results:
+  validation_status: partially-calibrated
+
+  main_nozzle:
+    flow_dynamics:
+      calibrated: true
+      method: manual
+      name: "Creality - Wood PLA"
+      slicer_filament_profile: "Generic PLA"
+      nozzle_diameter_mm: 0.4
+      nozzle_material: hardened-steel
+      nozzle_flow: standard
+      nozzle_temperature_c: 210
+      k_factor: 0.040
+      calibration_date: null
+    flow_rate:
+      calibrated: false
+      flow_ratio_baseline: 0.98
+      calibration_date: null
+
+  aux_nozzle:
+    flow_dynamics:
+      calibrated: false
+      nozzle_diameter_mm: 0.4
+      nozzle_material: hardened-steel
+      nozzle_flow: standard
+      nozzle_temperature_c: 210
+      k_factor: null
+      calibration_date: null
+    flow_rate:
+      calibrated: false
+      flow_ratio_baseline: 0.98
+      calibration_date: null
+
+  evidence:
+    source: "Bambu Studio calibration result supplied by repository owner"
