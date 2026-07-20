@@ -1,0 +1,33 @@
+calibration_results:
+  validation_status: partially-calibrated
+
+  main_nozzle:
+    flow_dynamics:
+      calibrated: false
+      slicer_filament_profile: "Bambu PLA Matte"
+      nozzle_diameter_mm: 0.4
+      nozzle_flow: standard
+      k_factor: null
+      calibration_date: null
+    flow_rate:
+      calibrated: false
+      flow_ratio: null
+      calibration_date: null
+
+  aux_nozzle:
+    flow_dynamics:
+      calibrated: true
+      method: manual
+      name: "Right_SF_Bambu PLA Matte"
+      slicer_filament_profile: "Bambu PLA Matte"
+      nozzle_diameter_mm: 0.4
+      nozzle_flow: standard
+      k_factor: 0.500
+      calibration_date: "2026-07-08"
+    flow_rate:
+      calibrated: false
+      flow_ratio: null
+      calibration_date: null
+
+  evidence:
+    source: "Bambu Studio calibration result supplied by repository owner"
