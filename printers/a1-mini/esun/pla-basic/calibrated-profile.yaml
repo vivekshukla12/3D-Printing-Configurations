@@ -1,0 +1,45 @@
+profile:
+  kind: calibrated
+  name: "eSUN PLA Basic Flow Rate Calibrated"
+  validation_status: calibrated
+  slicer: Bambu Studio
+
+printer:
+  manufacturer: Bambu Lab
+  model: A1 Mini
+
+filament:
+  vendor: eSUN
+  product: PLA Basic
+  material: PLA
+  diameter_mm: 1.75
+  density_g_cm3: 1.25
+  softening_temperature_c: 45
+
+hardware:
+  nozzle_role: main
+  nozzle_diameter_mm: 0.4
+  nozzle_flow: standard
+
+settings:
+  flow_ratio: 0.98
+  nozzle_temperature_c:
+    initial_layer: 220
+    other_layers: 220
+  bed_temperature_c:
+    cool_plate_supertack:
+      initial_layer: 45
+      other_layers: 45
+    cool_plate:
+      initial_layer: 35
+      other_layers: 35
+    smooth_pei_high_temp:
+      initial_layer: 60
+      other_layers: 60
+    textured_pei:
+      initial_layer: 65
+      other_layers: 65
+  max_volumetric_speed_mm3_s: 16
+  recommended_nozzle_temperature_c:
+    min: 190
+    max: 240
