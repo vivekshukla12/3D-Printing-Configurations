@@ -1,0 +1,21 @@
+calibration_results:
+  validation_status: calibrated
+
+  main_nozzle:
+    flow_dynamics:
+      calibrated: true
+      method: manual
+      name: "eSUN PLA Basic"
+      slicer_filament_profile: "eSUN PLA+"
+      nozzle_diameter_mm: 0.4
+      nozzle_flow: standard
+      k_factor: 0.020
+      calibration_date: null
+    flow_rate:
+      calibrated: true
+      method: manual
+      flow_ratio: 0.98
+      calibration_date: null
+
+  evidence:
+    source: "Bambu Studio calibration result and calibrated filament-profile screenshots"
