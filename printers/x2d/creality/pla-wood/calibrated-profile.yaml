@@ -1,0 +1,80 @@
+profile:
+  kind: calibrated
+  name: "Creality PLA Wood - Bambu Lab X2D baseline"
+  validation_status: calibrated
+  slicer: Bambu Studio
+  created_from: "Generic PLA custom profile"
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: Creality
+  product: PLA Wood
+  material: wood-filled PLA
+  diameter_mm: 1.75
+  density_g_cm3: 1.21
+  softening_temperature_c: 45
+
+hardware:
+  nozzle_role: main
+  nozzle_diameter_mm: 0.4
+  nozzle_material: hardened-steel
+  nozzle_flow: standard
+  preferred_nozzle_diameter_mm_for_reliability: 0.6
+  plate: textured-pei
+
+settings:
+  flow_ratio: 0.98
+  recommended_nozzle_temperature_c:
+    min: 190
+    max: 220
+  nozzle_temperature_c:
+    initial_layer: 215
+    other_layers: 210
+  bed_temperature_c:
+    textured_pei:
+      initial_layer: 60
+      other_layers: 55
+  max_volumetric_speed_mm3_s: 8
+  cooling:
+    initial_layers_without_part_cooling: 3
+    initial_layer_part_fan_percent: 0
+    part_fan_min_percent: 80
+    part_fan_max_percent: 100
+    auxiliary_part_fan_percent: 0
+    overhang_fan_percent: 100
+    min_print_speed_mm_s: 20
+  layer_height_mm:
+    recommended: 0.20
+    acceptable:
+      - 0.20
+      - 0.24
+  speed_mm_s:
+    first_layer: 30
+    first_layer_infill: 40
+    outer_wall: 50
+    inner_wall: 70
+    sparse_infill: 100
+    internal_solid_infill: 80
+    top_surface: 45
+    gap_infill: 50
+    support: 80
+    support_interface: 50
+    bridge: 30
+    travel_min: 200
+    travel_max: 300
+  acceleration_mm_s2:
+    normal_printing: 1000
+    travel: 10000
+    initial_layer_travel: 6000
+    initial_layer: 500
+    outer_wall: 1000
+    inner_wall: 1000
+    top_surface: 1000
+    sparse_infill_percent: 100
+
+notes:
+  - "Conservative starting profile intended to reduce clogging and improve decorative surface quality."
+  - "Use the main nozzle for initial validation; calibrate AUX separately before relying on it."
