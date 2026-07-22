@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vivekshukla12/3D-Printing-Configurations/schemas/calibration-results.schema.json",
+  "title": "3D Printing Calibration Results",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "profile_version", "status", "printer", "filament", "configuration", "calibrations"],
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "profile_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["not-calibrated", "partial", "calibrated", "tested", "verified", "deprecated"]},
+    "printer": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["manufacturer", "model"],
+      "properties": {
+        "manufacturer": {"type": "string", "minLength": 1},
+        "model": {"type": "string", "minLength": 1}
+      }
+    },
+    "filament": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["vendor", "material"],
+      "properties": {
+        "vendor": {"type": "string", "minLength": 1},
+        "material": {"type": "string", "minLength": 1},
+        "variant": {"type": ["string", "null"]}
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "nozzle": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "role": {"enum": ["main", "auxiliary", "single"]},
+            "diameter_mm": {"type": "number", "exclusiveMinimum": 0},
+            "material": {"type": "string", "minLength": 1},
+            "flow_type": {"type": "string", "minLength": 1}
+          }
+        },
+        "filament_feed": {"type": "object", "additionalProperties": true},
+        "build_plate": {"type": "object", "additionalProperties": true},
+        "firmware": {"type": ["string", "null"]},
+        "bambu_studio": {"type": ["string", "null"]}
+      }
+    },
+    "calibrations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "flow_dynamics": {"$ref": "#/$defs/calibration"},
+        "flow_rate": {"$ref": "#/$defs/calibration"},
+        "temperature": {"$ref": "#/$defs/calibration"},
+        "max_volumetric_speed": {"$ref": "#/$defs/calibration"},
+        "pressure_advance": {"$ref": "#/$defs/calibration"},
+        "retraction": {"$ref": "#/$defs/calibration"},
+        "bridging": {"$ref": "#/$defs/calibration"},
+        "ironing": {"$ref": "#/$defs/calibration"},
+        "dimensional_accuracy": {"$ref": "#/$defs/calibration"}
+      }
+    },
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "calibration": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["not-run", "proposed", "calibrated", "tested", "verified", "failed"]},
+        "date": {"type": ["string", "null"], "format": "date"},
+        "method": {"type": ["string", "null"]},
+        "result": {},
+        "successful_prints": {"type": "integer", "minimum": 0},
+        "contributors": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
