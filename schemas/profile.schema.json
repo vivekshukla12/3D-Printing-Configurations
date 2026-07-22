@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vivekshukla12/3D-Printing-Configurations/schemas/profile.schema.json",
+  "title": "3D Printing Filament Profile",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "profile_version", "status"],
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "profile_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["manufacturer-default", "partial", "baseline", "proposed", "calibrated", "tested", "verified", "deprecated"]},
+    "configuration": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "printer": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["manufacturer", "model"],
+          "properties": {
+            "manufacturer": {"type": "string", "minLength": 1},
+            "model": {"type": "string", "minLength": 1}
+          }
+        },
+        "nozzle": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "role": {"enum": ["main", "auxiliary", "single"]},
+            "diameter_mm": {"type": "number", "exclusiveMinimum": 0},
+            "material": {"type": "string", "minLength": 1},
+            "flow_type": {"type": "string", "minLength": 1}
+          }
+        },
+        "build_plate": {"type": "object", "additionalProperties": true},
+        "filament_feed": {"type": "object", "additionalProperties": true},
+        "dryer": {"type": "object", "additionalProperties": true},
+        "enclosure": {"type": ["object", "null"], "additionalProperties": true},
+        "firmware": {"type": ["string", "null"]},
+        "bambu_studio": {"type": ["string", "null"]}
+      }
+    },
+    "drying": {"type": "object", "additionalProperties": true},
+    "speed": {"type": "object", "additionalProperties": true},
+    "acceleration": {"type": "object", "additionalProperties": true},
+    "filament": {"type": "object", "additionalProperties": true},
+    "print_temperature": {"type": "object", "additionalProperties": true},
+    "volumetric_speed": {"type": "object", "additionalProperties": true},
+    "scarf_seam": {"type": "object", "additionalProperties": true},
+    "adjustment_notes": {"type": "object", "additionalProperties": true},
+    "usage_notes": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}
