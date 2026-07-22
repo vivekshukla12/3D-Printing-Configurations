@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vivekshukla12/3D-Printing-Configurations/schemas/metadata.schema.json",
+  "title": "3D Printing Profile Metadata",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "id", "printer", "filament", "profile", "configuration"],
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "printer": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["manufacturer", "model"],
+      "properties": {
+        "manufacturer": {"type": "string", "minLength": 1},
+        "model": {"type": "string", "minLength": 1}
+      }
+    },
+    "filament": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["vendor", "material"],
+      "properties": {
+        "vendor": {"type": "string", "minLength": 1},
+        "material": {"type": "string", "minLength": 1},
+        "variant": {"type": ["string", "null"]}
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["version", "status", "recommended_profile"],
+      "properties": {
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "status": {"enum": ["manufacturer-default", "partial", "baseline", "proposed", "calibrated", "tested", "verified", "deprecated"]},
+        "recommended_profile": {"type": "string", "minLength": 1},
+        "calibration_results": {"type": ["string", "null"]}
+      }
+    },
+    "configuration": {"$ref": "#/$defs/configuration"},
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}
+    }
+  },
+  "$defs": {
+    "configuration": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "nozzle": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "role": {"enum": ["main", "auxiliary", "single"]},
+            "diameter_mm": {"type": "number", "exclusiveMinimum": 0},
+            "material": {"type": "string", "minLength": 1},
+            "flow_type": {"type": "string", "minLength": 1}
+          }
+        },
+        "build_plate": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {"type": {"type": "string", "minLength": 1}}
+        },
+        "filament_feed": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {"method": {"type": "string", "minLength": 1}}
+        },
+        "dryer": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "model": {"type": ["string", "null"]},
+            "print_directly_from_dryer": {"type": "boolean"}
+          }
+        },
+        "enclosure": {"type": ["object", "null"], "additionalProperties": true},
+        "firmware": {"type": ["string", "null"]},
+        "bambu_studio": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
