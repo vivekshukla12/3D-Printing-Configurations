@@ -1,0 +1,110 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: baseline
+
+configuration:
+  printer:
+    manufacturer: Bambu Lab
+    model: A1 Mini
+  nozzle:
+    diameter_mm: 0.4
+    material: hardened-steel
+  filament_feed:
+    method: external-spool
+
+drying:
+  temperature_c: 55
+  duration_new_spool_hours:
+    minimum: 4
+    maximum: 6
+  duration_wet_spool_hours:
+    minimum: 6
+    maximum: 8
+  print_directly_from_dryer: true
+
+speed:
+  initial_layer_mm_s: 20
+  initial_layer_infill_mm_s: 25
+  outer_wall_mm_s: 30
+  inner_wall_mm_s: 50
+  small_perimeters_percent: 50
+  small_perimeter_threshold_mm: 0
+  sparse_infill_mm_s: 60
+  internal_solid_infill_mm_s: 50
+  vertical_shell_speed_percent: 80
+  top_surface_mm_s: 25
+  slow_down_for_overhangs: true
+  overhang_mm_s:
+    at_10_percent: 20
+    at_25_percent: 30
+    at_50_percent: 25
+    at_75_percent: 15
+    at_100_percent: 10
+  slow_down_by_height: false
+  bridge_mm_s: 20
+  gap_infill_mm_s: 35
+  support_mm_s: 40
+  support_interface_mm_s: 25
+  travel_mm_s: 700
+
+acceleration:
+  normal_printing_mm_s2: 3000
+  travel_mm_s2: 10000
+  initial_layer_travel_mm_s2: 3000
+  initial_layer_mm_s2: 500
+  outer_wall_mm_s2: 2000
+  inner_wall_mm_s2: 2500
+  top_surface_mm_s2: 1000
+  sparse_infill_mm_s2: 3000
+
+filament:
+  material: SUNLU TPU 95A
+  prime_volume_mm3: 45
+  ramming_length_mm: 10
+  travel_time_after_ramming_s: 0
+  precooling_target_temperature_c: 0
+  recommended_nozzle_temperature_c:
+    minimum: 220
+    maximum: 225
+
+print_temperature:
+  plates:
+    cool_plate_supertack:
+      initial_layer_c: 0
+      other_layers_c: 0
+    cool_plate:
+      initial_layer_c: 35
+      other_layers_c: 35
+    engineering_plate:
+      initial_layer_c: 35
+      other_layers_c: 35
+    smooth_pei_high_temp_plate:
+      initial_layer_c: 35
+      other_layers_c: 35
+    textured_pei_plate:
+      initial_layer_c: 35
+      other_layers_c: 35
+  nozzle:
+    initial_layer_c: 225
+    other_layers_c: 225
+
+volumetric_speed:
+  adaptive: false
+  maximum_mm3_s: 6.0
+  ramming_extruder_change_mm3_s: -1
+  ramming_hotend_change_mm3_s: -1
+
+scarf_seam:
+  type: none
+  start_height_percent: 10
+  slope_gap_percent: 0
+  length_mm: 10
+
+adjustment_notes:
+  under_extrusion_nozzle_temperature_c: 230
+  excessive_stringing_nozzle_temperature_c: 220
+
+usage_notes:
+  - Dry filament before every critical print.
+  - Print directly from the filament dryer whenever possible.
+  - Verify dimensional accuracy, extrusion consistency, and stringing performance before further tuning.
