@@ -1,0 +1,16 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: partial
+
+printer:
+  manufacturer: Bambu Lab
+  model: A1 Mini
+
+filament:
+  vendor: SUNLU
+  material: TPU
+  variant: 95A
+
+notes:
+  - No separate manufacturer-default profile was supplied with this entry.
+  - Use calibrated-profile.yaml for the recorded baseline settings.
