@@ -1,0 +1,31 @@
+schema_version: 1.0.0
+id: a1-mini-sunlu-tpu-95a
+
+printer:
+  manufacturer: Bambu Lab
+  model: A1 Mini
+
+filament:
+  vendor: SUNLU
+  material: TPU
+  variant: 95A
+
+profile:
+  version: 1.0.0
+  status: baseline
+  recommended_profile: calibrated-profile.yaml
+  calibration_results: calibration-results.yaml
+
+configuration:
+  nozzle:
+    diameter_mm: 0.4
+    material: hardened-steel
+  filament_feed:
+    method: external-spool
+  dryer:
+    print_directly_from_dryer: true
+
+tags:
+  - tpu
+  - flexible
+  - 95a
