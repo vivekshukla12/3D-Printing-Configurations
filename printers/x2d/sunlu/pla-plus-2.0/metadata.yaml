@@ -1,0 +1,35 @@
+schema_version: 1.0.0
+id: x2d-sunlu-pla-plus-2.0
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: SUNLU
+  material: PLA+
+  product: PLA+ 2.0
+
+status: calibrated
+
+configuration:
+  nozzle:
+    role: Main
+    diameter_mm: 0.4
+    material: Hardened Steel
+  process_profile: 0.20 mm Standard
+
+files:
+  speed_profile: speed-profile.yaml
+  calibration_results: calibration-results.yaml
+
+validation:
+  successful_prints: 0
+  contributors:
+    - vivekshukla12
+
+tags:
+  - pla-plus
+  - high-speed
+  - x2d
+  - main-nozzle
