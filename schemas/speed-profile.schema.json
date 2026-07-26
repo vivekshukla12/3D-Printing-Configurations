@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vivekshukla12/3D-Printing-Configurations/schemas/speed-profile.schema.json",
+  "title": "Bambu Studio Speed Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile",
+    "context",
+    "initial_layer_speed",
+    "other_layers_speed",
+    "travel_speed",
+    "acceleration",
+    "filament_speed_limit"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "status", "purpose"],
+      "properties": {
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "status": {"enum": ["manufacturer-default", "proposed", "baseline", "calibrated", "tested", "verified"]},
+        "purpose": {"type": "string", "minLength": 1}
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["printer", "nozzle", "filament", "process_profile"],
+      "properties": {
+        "printer": {"type": "string", "minLength": 1},
+        "nozzle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["role", "diameter_mm", "material"],
+          "properties": {
+            "role": {"enum": ["Main", "Auxiliary"]},
+            "diameter_mm": {"type": "number", "exclusiveMinimum": 0},
+            "material": {"type": "string", "minLength": 1}
+          }
+        },
+        "filament": {"type": "string", "minLength": 1},
+        "process_profile": {"type": "string", "minLength": 1}
+      }
+    },
+    "initial_layer_speed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["initial_layer_mm_s", "initial_layer_infill_mm_s"],
+      "properties": {
+        "initial_layer_mm_s": {"type": "number", "minimum": 0},
+        "initial_layer_infill_mm_s": {"type": "number", "minimum": 0}
+      }
+    },
+    "other_layers_speed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outer_wall_mm_s", "inner_wall_mm_s", "small_perimeters_percent", "small_perimeter_threshold", "sparse_infill_mm_s", "internal_solid_infill_mm_s", "vertical_shell_speed", "top_surface_mm_s", "slow_down_for_overhangs", "overhang_speed", "slow_down_by_height", "bridge_mm_s", "gap_infill_mm_s", "support_mm_s", "support_interface_mm_s"],
+      "properties": {
+        "outer_wall_mm_s": {"type": "number", "minimum": 0},
+        "inner_wall_mm_s": {"type": "number", "minimum": 0},
+        "small_perimeters_percent": {"type": "number", "minimum": 0},
+        "small_perimeter_threshold": {"oneOf": [{"type": "number", "minimum": 0}, {"const": "Use profile default"}]},
+        "sparse_infill_mm_s": {"type": "number", "minimum": 0},
+        "internal_solid_infill_mm_s": {"type": "number", "minimum": 0},
+        "vertical_shell_speed": {"oneOf": [{"type": "number", "minimum": 0}, {"type": "string", "pattern": "^([0-9]+(?:\\.[0-9]+)?%|Use profile default)$"}]},
+        "top_surface_mm_s": {"type": "number", "minimum": 0},
+        "slow_down_for_overhangs": {"type": "boolean"},
+        "overhang_speed": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["overhang_10_percent_mm_s", "overhang_25_percent_mm_s", "overhang_50_percent_mm_s", "overhang_75_percent_mm_s", "overhang_100_percent_mm_s"],
+          "properties": {
+            "overhang_10_percent_mm_s": {"type": "number", "minimum": 0},
+            "overhang_25_percent_mm_s": {"type": "number", "minimum": 0},
+            "overhang_50_percent_mm_s": {"type": "number", "minimum": 0},
+            "overhang_75_percent_mm_s": {"type": "number", "minimum": 0},
+            "overhang_100_percent_mm_s": {"type": "number", "minimum": 0}
+          }
+        },
+        "slow_down_by_height": {"oneOf": [{"type": "boolean"}, {"const": "Use profile default"}]},
+        "bridge_mm_s": {"type": "number", "minimum": 0},
+        "gap_infill_mm_s": {"type": "number", "minimum": 0},
+        "support_mm_s": {"type": "number", "minimum": 0},
+        "support_interface_mm_s": {"type": "number", "minimum": 0}
+      }
+    },
+    "travel_speed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["travel_mm_s"],
+      "properties": {"travel_mm_s": {"type": "number", "minimum": 0}}
+    },
+    "acceleration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normal_printing_mm_s2", "travel_mm_s2", "initial_layer_travel_mm_s2", "initial_layer_mm_s2", "outer_wall_mm_s2", "inner_wall_mm_s2", "top_surface_mm_s2", "sparse_infill_percent"],
+      "properties": {
+        "normal_printing_mm_s2": {"type": "number", "minimum": 0},
+        "travel_mm_s2": {"type": "number", "minimum": 0},
+        "initial_layer_travel_mm_s2": {"type": "number", "minimum": 0},
+        "initial_layer_mm_s2": {"type": "number", "minimum": 0},
+        "outer_wall_mm_s2": {"type": "number", "minimum": 0},
+        "inner_wall_mm_s2": {"type": "number", "minimum": 0},
+        "top_surface_mm_s2": {"type": "number", "minimum": 0},
+        "sparse_infill_percent": {"type": "number", "minimum": 0}
+      }
+    },
+    "filament_speed_limit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximum_volumetric_speed_mm3_s"],
+      "properties": {"maximum_volumetric_speed_mm3_s": {"type": "number", "exclusiveMinimum": 0}}
+    }
+  }
+}
