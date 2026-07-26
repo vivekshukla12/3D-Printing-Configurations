@@ -1,0 +1,58 @@
+schema_version: 1.0.0
+profile:
+  version: 1.0.0
+  status: calibrated
+  purpose: General-purpose printing with good surface quality
+
+context:
+  printer: Bambu Lab X2D
+  nozzle:
+    role: Main
+    diameter_mm: 0.4
+    material: Hardened Steel
+  filament: SUNLU PLA+ 2.0
+  process_profile: 0.20 mm Standard
+
+initial_layer_speed:
+  initial_layer_mm_s: 35
+  initial_layer_infill_mm_s: 60
+
+other_layers_speed:
+  outer_wall_mm_s: 120
+  inner_wall_mm_s: 180
+  small_perimeters_percent: 60
+  small_perimeter_threshold: Use profile default
+  sparse_infill_mm_s: 200
+  internal_solid_infill_mm_s: 160
+  vertical_shell_speed: Use profile default
+  top_surface_mm_s: 90
+  slow_down_for_overhangs: true
+
+  overhang_speed:
+    overhang_10_percent_mm_s: 60
+    overhang_25_percent_mm_s: 60
+    overhang_50_percent_mm_s: 40
+    overhang_75_percent_mm_s: 25
+    overhang_100_percent_mm_s: 15
+
+  slow_down_by_height: Use profile default
+  bridge_mm_s: 45
+  gap_infill_mm_s: 100
+  support_mm_s: 150
+  support_interface_mm_s: 80
+
+travel_speed:
+  travel_mm_s: 1000
+
+acceleration:
+  normal_printing_mm_s2: 4000
+  travel_mm_s2: 10000
+  initial_layer_travel_mm_s2: 6000
+  initial_layer_mm_s2: 500
+  outer_wall_mm_s2: 2000
+  inner_wall_mm_s2: 0
+  top_surface_mm_s2: 2000
+  sparse_infill_percent: 100
+
+filament_speed_limit:
+  maximum_volumetric_speed_mm3_s: 18
