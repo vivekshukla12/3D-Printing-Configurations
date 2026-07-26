@@ -1,0 +1,17 @@
+schema_version: 1.0.0
+filament: SUNLU PLA+ 2.0
+printer: Bambu Lab X2D
+
+flow_dynamics:
+  status: calibrated
+  nozzle:
+    role: Main
+    flow_type: Standard
+  source_profile: Generic PLA High Speed
+  k_factor: 0.030
+
+flow_rate:
+  status: not_recorded
+
+ironing:
+  status: not_recorded
