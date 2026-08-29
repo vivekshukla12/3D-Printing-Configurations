@@ -1,0 +1,22 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: partial
+
+configuration:
+  printer:
+    manufacturer: Bambu Lab
+    model: X2D
+  nozzle:
+    role: main
+    diameter_mm: 0.4
+    material: Hardened Steel
+    flow_type: Standard
+
+filament:
+  vendor: TINMORRY
+  material: PETG-CF
+  product: PETG-CF 1.75 mm Black
+
+notes:
+  - Only the supplied Flow Dynamics calibration has been recorded so far.
+  - No temperature, flow ratio, cooling, speed, or volumetric-speed values are stored in this profile yet.
