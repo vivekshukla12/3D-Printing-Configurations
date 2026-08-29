@@ -12,7 +12,7 @@ filament:
   product: PETG-CF 1.75 mm Black
 
 profile:
-  version: 1.0.0
+  version: 1.1.0
   status: partial
   recommended_profile: calibrated-profile.yaml
   calibration_results: calibration-results.yaml
