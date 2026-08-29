@@ -1,5 +1,5 @@
 schema_version: 1.0.0
-profile_version: 1.0.0
+profile_version: 1.1.0
 status: partial
 
 printer:
@@ -28,6 +28,17 @@ calibrations:
       k_factor: 0.050
       source_profile: Generic PETG-CF
       nozzle_flow: Standard
+    successful_prints: 0
+    contributors:
+      - vivekshukla12
+
+  flow_rate:
+    status: calibrated
+    date: 2026-08-29
+    method: Bambu Studio Flow Rate Calibration
+    result:
+      flow_ratio: 0.997500
+      selected_block: 0
     successful_prints: 0
     contributors:
       - vivekshukla12
