@@ -1,0 +1,36 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: partial
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: TINMORRY
+  material: PETG-CF
+  variant: Carbon Fibre
+  product: PETG-CF 1.75 mm Black
+
+configuration:
+  nozzle:
+    role: main
+    diameter_mm: 0.4
+    material: Hardened Steel
+    flow_type: Standard
+
+calibrations:
+  flow_dynamics:
+    status: calibrated
+    date: 2026-08-29
+    method: Bambu Studio Flow Dynamics
+    result:
+      k_factor: 0.050
+      source_profile: Generic PETG-CF
+      nozzle_flow: Standard
+    successful_prints: 0
+    contributors:
+      - vivekshukla12
+
+notes:
+  - Calibration profile name shown in Bambu Studio: TINMORRY - PETG-CF - M_NZL.
