@@ -1,5 +1,5 @@
 schema_version: 1.0.0
-profile_version: 1.0.0
+profile_version: 1.1.0
 status: partial
 
 configuration:
@@ -17,6 +17,9 @@ filament:
   material: PETG-CF
   product: PETG-CF 1.75 mm Black
 
+settings:
+  flow_ratio: 0.997500
+
 notes:
-  - Only the supplied Flow Dynamics calibration has been recorded so far.
-  - No temperature, flow ratio, cooling, speed, or volumetric-speed values are stored in this profile yet.
+  - Flow Dynamics and Flow Rate calibrations have been recorded for this hardware configuration.
+  - No temperature, cooling, speed, or volumetric-speed values are stored in this profile yet.
