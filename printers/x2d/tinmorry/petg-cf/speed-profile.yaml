@@ -1,0 +1,63 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: tested
+
+configuration:
+  printer:
+    manufacturer: Bambu Lab
+    model: X2D
+  nozzle:
+    role: main
+    diameter_mm: 0.4
+    material: Hardened Steel
+    flow_type: Standard
+  process_profile: 0.20 mm Standard
+  purpose: quality-reliability baseline
+
+speed:
+  initial_layer_mm_s: 25
+  initial_layer_infill_mm_s: 35
+  outer_wall_mm_s: 60
+  inner_wall_mm_s: 90
+  small_perimeters_percent: 50
+  small_perimeter_threshold: use_profile_default
+  sparse_infill_mm_s: 110
+  internal_solid_infill_mm_s: 90
+  vertical_shell_speed: use_profile_default
+  top_surface_mm_s: 45
+  slow_down_for_overhangs: true
+  overhang:
+    10_percent_mm_s: 45
+    25_percent_mm_s: 40
+    50_percent_mm_s: 30
+    75_percent_mm_s: 20
+    100_percent_mm_s: 15
+  slow_down_by_height: use_profile_default
+  bridge_mm_s: 25
+  gap_infill_mm_s: 60
+  support_mm_s: 80
+  support_interface_mm_s: 50
+  travel_mm_s: 700
+
+acceleration:
+  normal_printing_mm_s2: 3000
+  travel_mm_s2: 10000
+  initial_layer_travel_mm_s2: 3000
+  initial_layer_mm_s2: 500
+  outer_wall_mm_s2: 1500
+  inner_wall_mm_s2: 2500
+  top_surface_mm_s2: 1200
+  sparse_infill_mm_s2: 3000
+
+filament_speed_limit:
+  max_volumetric_speed_mm3_s: 8
+
+validation:
+  model: 3DBenchy
+  result: successful
+  observation: Print completed without visible flaws.
+  successful_prints: 1
+
+notes:
+  - Conservative quality and reliability baseline.
+  - Preserve this profile when testing higher maximum volumetric speed or faster variants.
