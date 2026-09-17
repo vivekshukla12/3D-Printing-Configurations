@@ -1,0 +1,42 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: calibrated
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: eSUN
+  material: PLA Matte
+  variant: Fire Red
+
+configuration:
+  nozzle:
+    role: main
+    diameter_mm: 0.4
+    material: Hardened Steel
+    flow_type: Standard
+
+calibrations:
+  flow_dynamics:
+    status: calibrated
+    date: 2026-09-13
+    method: Bambu Studio Flow Dynamics Calibration
+    result:
+      factor_k: 0.020
+      calibration_name: Esun PLA Matte M_Nzzl
+    contributors:
+      - vivekshukla12
+  flow_rate:
+    status: calibrated
+    date: 2026-09-13
+    method: Bambu Studio Flow Rate Calibration
+    result:
+      flow_ratio: 1.029
+      preset_name: Esun PLA Matte - FRC - M_Nzzl
+    contributors:
+      - vivekshukla12
+
+notes:
+  - Flow Dynamics and Flow Rate are calibrated independently for the X2D Main nozzle.
