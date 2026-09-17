@@ -1,0 +1,59 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: calibrated
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: eSUN
+  material: PLA Matte
+  variant: Fire Red
+
+configuration:
+  nozzle:
+    role: main
+    diameter_mm: 0.4
+    material: Hardened Steel
+    flow_type: Standard
+
+filament_settings:
+  diameter_mm: 1.75
+  flow_ratio: 1.029
+  density_g_cm3: 1.24
+  shrinkage_percent: 100
+  velocity_adaptation_factor: 1
+  softening_temperature_c: 45
+  recommended_nozzle_temperature_c:
+    min: 190
+    max: 240
+  nozzle_temperature_c:
+    initial_layer: 220
+    other_layers: 220
+  build_plate_temperature_c:
+    cool_plate_super_tack:
+      initial_layer: 45
+      other_layers: 45
+    cool_plate:
+      initial_layer: 35
+      other_layers: 35
+    engineering_plate:
+      initial_layer: 55
+      other_layers: 55
+    smooth_pei_high_temp:
+      initial_layer: 55
+      other_layers: 55
+    textured_pei:
+      initial_layer: 55
+      other_layers: 55
+  adaptive_volumetric_speed: false
+  max_volumetric_speed_mm3_s: 12
+
+calibration_reference:
+  flow_dynamics_factor_k: 0.020
+  flow_ratio: 1.029
+
+notes:
+  - Values captured from the user's Bambu Studio Fire Red filament preset after Flow Rate calibration.
+  - Maximum volumetric speed of 12 mm3/s is the current preset value, not a measured MVS calibration result.
