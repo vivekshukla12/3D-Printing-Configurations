@@ -1,0 +1,38 @@
+schema_version: 1.0.0
+id: x2d-esun-pla-matte-fire-red
+
+printer:
+  manufacturer: Bambu Lab
+  model: X2D
+
+filament:
+  vendor: eSUN
+  material: PLA Matte
+  variant: Fire Red
+
+profile:
+  version: 1.0.0
+  status: calibrated
+  recommended_profile: calibrated-profile.yaml
+  speed_profile: speed-profile.yaml
+  calibration_results: calibration-results.yaml
+
+configuration:
+  nozzle:
+    role: main
+    diameter_mm: 0.4
+    material: Hardened Steel
+    flow_type: Standard
+
+validation:
+  successful_prints: 0
+  contributors:
+    - vivekshukla12
+
+tags:
+  - pla
+  - pla-matte
+  - fire-red
+  - esun
+  - x2d
+  - main-nozzle
