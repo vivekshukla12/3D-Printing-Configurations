@@ -1,0 +1,36 @@
+schema_version: 1.0.0
+profile_version: 1.0.0
+status: baseline
+
+configuration:
+  printer:
+    manufacturer: Bambu Lab
+    model: X2D
+  nozzle:
+    role: main
+    diameter_mm: 0.4
+    material: Hardened Steel
+    flow_type: Standard
+  process_profile: 0.20 mm Standard
+  purpose: baseline currently in use; pending validation result
+
+speed:
+  initial_layer_mm_s: 40
+  initial_layer_infill_mm_s: 60
+  outer_wall_mm_s: 80
+  inner_wall_mm_s: 120
+  sparse_infill_mm_s: 150
+  internal_solid_infill_mm_s: 120
+  top_surface_mm_s: 70
+
+filament_speed_limit:
+  max_volumetric_speed_mm3_s: 12
+
+validation:
+  status: pending
+  successful_prints: 0
+
+notes:
+  - These are the baseline speed values the user chose to use on 2026-09-17.
+  - They are intentionally recorded as baseline, not tested or verified, until the current print result is reported.
+  - Settings not explicitly established in the conversation are omitted rather than inferred.
